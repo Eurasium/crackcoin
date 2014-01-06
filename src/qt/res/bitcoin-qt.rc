@@ -1,0 +1,39 @@
+IDI_ICON1 ICON DISCARDABLE "icons/crackcoin.ico"
+IDI_ICON2 ICON DISCARDABLE "icons/crackcoin-testnet.ico"
+
+#include <windows.h>             // needed for VERSIONINFO
+#include "../../clientversion.h" // holds the needed client version information
+
+#define VER_PRODUCTVERSION     crackcoin_VERSION_MAJOR,crackcoin_VERSION_MINOR,crackcoin_VERSION_REVISION,crackcoin_VERSION_BUILD
+#define VER_PRODUCTVERSION_STR STRINGIZE(crackcoin_VERSION_MAJOR) "." STRINGIZE(crackcoin_VERSION_MINOR) "." STRINGIZE(crackcoin_VERSION_REVISION) "." STRINGIZE(crackcoin_VERSION_BUILD)
+#define VER_FILEVERSION        VER_PRODUCTVERSION
+#define VER_FILEVERSION_STR    VER_PRODUCTVERSION_STR
+#define COPYRIGHT_STR          "2013-" STRINGIZE(COPYRIGHT_YEAR) " The crackcoin developers"
+
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     VER_FILEVERSION
+PRODUCTVERSION  VER_PRODUCTVERSION
+FILEOS          VOS_NT_WINDOWS32
+FILETYPE        VFT_APP
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904E4" // U.S. English - multilingual (hex)
+        BEGIN
+            VALUE "CompanyName",        "crackcoin"
+            VALUE "FileDescription",    "crackcoin-Qt (OSS GUI client for crackcoin)"
+            VALUE "FileVersion",        VER_FILEVERSION_STR
+            VALUE "InternalName",       "crackcoin-qt"
+            VALUE "LegalCopyright",     COPYRIGHT_STR
+            VALUE "LegalTrademarks1",   "Distributed under conditional MIT/X11 software license, see the accompanying file COPYING."
+            VALUE "OriginalFilename",   "crackcoin-qt.exe"
+            VALUE "ProductName",        "crackcoin-Qt"
+            VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
+        END
+    END
+
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0, 1252 // language neutral - multilingual (decimal)
+    END
+END
