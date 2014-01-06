@@ -2773,7 +2773,7 @@ bool InitBlockIndex() {
         //   vMerkleTree: 4a5e1e
 
         // Genesis block
-        const char* pszDedication = "7/Jan/2013 SMH: Cold snap could reach minus 50."
+        const char* pszDedication = "7/Jan/2013 SMH: Cold snap could reach minus 50.";
         CTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
